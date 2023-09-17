@@ -23,7 +23,6 @@ function App() {
 <Task title="Tidy" deadline="Today" />
     </div>
   );
-  
 }
 
 export default App;
