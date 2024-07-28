@@ -17,24 +17,36 @@ div {
 }
 
 .card {
-  text-align: center;
   display: inline-block;
   vertical-align: top;
   font-family: system-ui;
   background: #5bb4c4;
   color: white;
+  text-align: center;
   width: 180px;
   height: 240px;
   margin: 10px;
   padding: 10px;
   position: relative;
+  border-width: 8pt;
+  border-radius: 10%;
+  border-style: groove;
+  border-color: black;
 }
 
 .title {
   font-weight: bold;
   font-size: 1.2em; 
 }
+.description {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: large;
+  font-weight: bold;
+  color: crimson;
 
-.description{
-  font-style: italic;
+}
+
+.deadline {
+  color: darkred;
+  font: bolder;
 }
