@@ -1,3 +1,4 @@
+/*
 h1 {
   text-align: center;
   background-color: grey;
@@ -9,7 +10,9 @@ h1 {
   border-style: groove;
   border-color: black;
 }
+*/
 
+/*
 div {
   padding: 20px;
 }
@@ -17,7 +20,9 @@ div {
 .container{
   text-align: center;
 }
+*/
 
+/*
 .card {
   display: inline-block;
   vertical-align: top;
@@ -46,13 +51,14 @@ div {
   font-weight: bold;
   color: crimson;
 
-}
+}*/
 
 .deadline {
   color: darkred;
   font: bolder;
 }
 
+/*
 button {
   border: none;
   border-radius: 3px;
@@ -76,7 +82,8 @@ button {
   right: 5px;
   color: red;
 }
-
+*/
+/*
 input[type=text], input[type=date] {
   width: 100%;
   padding: 12px 20px;
@@ -105,3 +112,4 @@ input[type=submit]:hover {
 form {
   text-align: left;
 }
+  */
