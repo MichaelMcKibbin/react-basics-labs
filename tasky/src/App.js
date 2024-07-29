@@ -8,16 +8,15 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 
 
-
-
 function App() {
+  
   const [ taskState, setTaskState ] = useState({
     tasks: [
-      { id: 1, title:"Dishes", description: "Empty dishwasher", deadline: "Today" , done: false},
-      { id: 2, title: "Laundry", description: "Fold clothes and put away", deadline: "Tomorrow", done: false },
-      { id: 3, title: "Tidy up", description: "Tidy living room", deadline: "Today" , done: false},
-      { id: 4, title:"Vacuum", description: "Vacuum all rooms", deadline: "Friday" , done: false},
-      { id: 5, title: "Garbage", description: "Put bins out", deadline: "Sunday Night" , done: false}
+      { id: 1, title:"Dishes", description: "Empty dishwasher", deadline: "Today" , done: false, priority:"High"},
+      { id: 2, title: "Laundry", description: "Fold clothes and put away", deadline: "Tomorrow", done: false, priority:"High" },
+      { id: 3, title: "Tidy up", description: "Tidy living room", deadline: "Today" , done: false, priority:"Low"},
+      { id: 4, title:"Vacuum", description: "Vacuum all rooms", deadline: "Friday" , done: false, priority:"Medium"},
+      { id: 5, title: "Garbage", description: "Put bins out", deadline: "Sunday Night" , done: false, priority:"High"}
       
     ]
   });
@@ -33,12 +32,17 @@ function App() {
   const tasks = [...taskState.tasks];
   tasks.splice(taskIndex, 1);
   setTaskState({tasks});
-  } 
+  }
 
+  
+  
+  
   const [ formState, setFormState ] = useState({
   title: "",
   description: "",
-  deadline: ""
+  deadline: "",
+  priority: ""
+
   });
 
    const formChangeHandler = (event) => {
@@ -54,6 +58,8 @@ function App() {
       case "deadline":
           form.deadline = event.target.value;
           break;
+      case "priority":
+          form.priority = event.target.value;          
       default:
           form = formState;
     }
@@ -66,7 +72,9 @@ function App() {
 
     const tasks = [...taskState.tasks];
     const form = {...formState};
-
+    
+    
+    
     form.id = uuidv4();
     
     tasks.push(form);
@@ -112,8 +120,11 @@ function App() {
                 deadline={task.deadline}
                 done={task.done}
                 key={task.id}
+                priority={task.priority}
+                
                 markDone = {() => doneHandler(index)}
                 deleteTask = {() => deleteHandler(index)}
+
               />
           ))}
         </Grid>
